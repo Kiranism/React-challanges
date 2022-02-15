@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+} from "react-router-dom";
+import Counter from "./tasks/Counter";
+import FetchData from "./tasks/FetchData";
+import SearchList from "./tasks/SearchList";
 
-function App() {
+import Provider from "./provider";
+import Context from "./context";
+import ContextCounter from "./tasks/ContextCounter";
+import ClassComp from "./tasks/ClassComp";
+import RefHook from "./tasks/RefHook";
+import StateHook from "./tasks/StateHook";
+import TernaryOp from "./tasks/TernaryOp";
+import onClick from "./tasks/onClick";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Provider>
+        <ContextCounter />
+      </Provider>  */}
+      {/* <SearchList />
+      <ClassComp /> */}
+      {/* <RefHook /> */}
+      {/* <StateHook />
+      <TernaryOp /> */}
+
+      <BrowserRouter>
+        <Switch>
+          <Route path="/">
+            <onClick />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
